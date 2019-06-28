@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TodoInterface } from 'src/app/interfaces/todo.interface';
 
 @Component({
   selector: 'app-one-item',
@@ -6,12 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./one-item.component.scss']
 })
 export class OneItemComponent implements OnInit {
-  @Input() name:string;
+  @Input() todo: TodoInterface;
+  visible:boolean;
   constructor() { }
 
   ngOnInit() {
-    console.log('oninit one item')
-    console.log(this.name)
+    this.visible = true;
+  }
+
+  public remove() {
+    this.visible = false;
   }
 
 }

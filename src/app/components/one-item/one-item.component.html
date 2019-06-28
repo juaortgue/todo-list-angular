@@ -1,1 +1,2 @@
-<li>{{name}}</li>
+<div *ngIf="visible"><li>{{todo.name}}</li>
+<button mat-button color="warn" (click)="remove()">Remove</button></div>

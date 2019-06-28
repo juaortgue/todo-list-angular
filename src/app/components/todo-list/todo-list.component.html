@@ -3,5 +3,5 @@
   <button mat-button color="accent" (click)="addTodo()">ADD</button>
 </form>
 <ul>
-  <app-one-item [name]="todo.name" *ngFor="let todo of todoList"></app-one-item>
+  <app-one-item  [todo]="todo" *ngFor="let todo of todoList"></app-one-item>
 </ul>
