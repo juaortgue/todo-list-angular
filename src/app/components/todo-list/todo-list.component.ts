@@ -16,15 +16,18 @@ export class TodoListComponent implements OnInit {
     this.createForm();
   }
   createForm() {
-    const newForm: FormGroup = this.fb.group ({
-      name: ["", Validators.required]   
+    const newForm: FormGroup = this.fb.group({
+      name: ["", Validators.required]
     });
     this.form = newForm;
-  
-}
+
+  }
 
   public addTodo() {
-
+    const newTodo: TodoInterface = {
+      name: this.form.get('name').value
+    }
+    this.todoList.push(newTodo);
   }
   public removeTodo() {
 
@@ -35,11 +38,9 @@ export class TodoListComponent implements OnInit {
   public getAllTodos() {
     this.todoList = [
       {
-        id: "1",
         name: "Go to the cinema"
       },
       {
-        id: "2",
         name: "Buy a car"
       }
     ];

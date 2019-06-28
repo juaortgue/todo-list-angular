@@ -10,6 +10,8 @@ export class OneItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('oninit one item')
+    console.log(this.name)
   }
 
 }
