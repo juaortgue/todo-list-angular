@@ -17,7 +17,7 @@ export class TodoListComponent implements OnInit {
   }
   createForm() {
     const newForm: FormGroup = this.fb.group({
-      name: ["", Validators.required]
+      name: ["", Validators.required,]
     });
     this.form = newForm;
 
@@ -31,9 +31,7 @@ export class TodoListComponent implements OnInit {
     this.todoList.push(newTodo);
   }
   
-  public updateTodo() {
-
-  }
+  
   public getAllTodos() {
     this.todoList = [
       {

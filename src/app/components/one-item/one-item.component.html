@@ -1,2 +1,7 @@
-<div [hidden]="!visible"><li>{{todo.name}}</li>
-<button mat-button color="warn" (click)="remove()">Remove</button></div>
+<li [hidden]="!visible">
+  <form [formGroup]="form" class="example-form" >
+    <input [formControl]="form.controls['name']" matInput value="{{todo.name}}" >
+  </form>
+  <button mat-button color="warn" (click)="edit()">Edit</button>
+  <button mat-button color="warn" (click)="remove()">Remove</button>
+</li>
