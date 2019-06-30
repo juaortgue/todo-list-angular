@@ -9,14 +9,12 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class OneItemComponent implements OnInit {
   @Input() todo: TodoInterface;
-  editUnlocked:boolean;
-  visible:boolean;
+  visible: boolean;
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
-  
+
   ngOnInit() {
-    this.editUnlocked=false;
     this.visible = true;
     this.createForm();
   }
@@ -24,18 +22,21 @@ export class OneItemComponent implements OnInit {
   public remove() {
     this.visible = false;
   }
+
+  public save() {
+    console.log('save')
+    this.todo.name = this.form.get('name').value;
+    this.form.get('name').disable();
+  }
+
   public edit() {
     console.log('editado')
-    this.editUnlocked = true;
-    this.form.controls.
-    console.log(this.form.get('name').value)
-    this.todo.name = this.form.get('name').value;
-    console.log(this.todo.name)
-  }//        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),
+    this.form.get('name').enable();
+  }
 
   createForm() {
     const newForm: FormGroup = this.fb.group({
-      name: new FormControl({value:this.todo.name, disabled: true}, Validators.required)
+      name: new FormControl({ value: this.todo.name, disabled: true }, Validators.required)
     });
     this.form = newForm;
 
