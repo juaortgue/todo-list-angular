@@ -6,18 +6,27 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { OneItemComponent } from './components/one-item/one-item.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { OneItemCheckedComponent } from './components/one-item-checked/one-item-checked.component';
+import { TodoListCheckedComponent } from './components/todo-list-checked/todo-list-checked.component';
+import { MenuComponent } from './components/menu/menu.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    OneItemComponent
+    OneItemComponent,
+    OneItemCheckedComponent,
+    TodoListCheckedComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

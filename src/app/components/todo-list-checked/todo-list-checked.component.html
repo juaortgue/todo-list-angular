@@ -1,8 +1,8 @@
-<h1>Simple todo list</h1>
+<h1>Todo list checked example</h1>
 <form [formGroup]="form" class="example-form">
   <input [formControl]="form.controls['name']" matInput placeholder="Todo">
   <button mat-button color="accent" (click)="addTodo()">ADD</button>
 </form>
 <ul>
-  <app-one-item  [todo]="todo" *ngFor="let todo of todoList"></app-one-item>
+  <app-one-item-checked  [todo]="todo" *ngFor="let todo of todoList"></app-one-item-checked>
 </ul>
