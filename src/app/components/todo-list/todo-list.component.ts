@@ -28,6 +28,7 @@ export class TodoListComponent implements OnInit {
       id: 0 ,
       name: this.form.get('name').value
     }
+    
     newTodo.id = this.todoList[this.todoList.length-1].id +1;
     this.todoList.push(newTodo);
     console.log(newTodo)

@@ -1,4 +1,4 @@
-<li>
+<li [hidden]="!visible">
   <form [formGroup]="form" class="example-form">
     <input type="checkbox" (click)="checkMe()">
     <input [formControl]="form.controls['name']" matInput value="{{todo.name}}">

@@ -17,6 +17,7 @@ export class OneItemCheckedComponent implements OnInit {
 
   ngOnInit() {
     this.visible = true;
+    this.checked = false;
     this.createForm();
   }
 
@@ -44,7 +45,6 @@ export class OneItemCheckedComponent implements OnInit {
       name: new FormControl({ value: this.todo.name, disabled: true }, Validators.required)
     });
     this.form = newForm;
-
   }
 
 }
