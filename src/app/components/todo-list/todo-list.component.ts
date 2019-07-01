@@ -25,21 +25,23 @@ export class TodoListComponent implements OnInit {
 
   public addTodo() {
     const newTodo: TodoInterface = {
-      id: "1",
+      id: 0 ,
       name: this.form.get('name').value
     }
+    newTodo.id = this.todoList[this.todoList.length-1].id +1;
     this.todoList.push(newTodo);
+    console.log(newTodo)
   }
   
   
   public getAllTodos() {
     this.todoList = [
       {
-        id: "0",
+        id: 0,
         name: "Go to the cinema"
       },
       {
-        id: "0100",
+        id: 1,
         name: "Buy a car"
       }
     ];
